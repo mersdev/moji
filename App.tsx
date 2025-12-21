@@ -2,14 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
 import { LOCAL_FONT_SOURCES, PRESET_FONTS } from './constants';
 import { FontOption, TextStyle } from './types';
-import { FontUploader } from './components/FontUploader';
 import { StyleControls } from './components/StyleControls';
 import { Copy, Check, AlertCircle, Instagram, PenTool } from 'lucide-react';
 
 const App: React.FC = () => {
   const [text, setText] = useState('墨迹\n记录生活');
   const [selectedFont, setSelectedFont] = useState<FontOption>(PRESET_FONTS[2]); // Default to a creative font
-  const [customFonts, setCustomFonts] = useState<FontOption[]>([]);
   const [copyStatus, setCopyStatus] = useState<'idle' | 'success' | 'error'>('idle');
   
   const previewRef = useRef<HTMLDivElement>(null);
@@ -70,7 +68,7 @@ const App: React.FC = () => {
     };
   }, []);
 
-  const allFonts = [...PRESET_FONTS, ...customFonts];
+  const allFonts = PRESET_FONTS;
 
   const handleCopyImage = async () => {
     if (!previewRef.current) return;
@@ -143,10 +141,7 @@ const App: React.FC = () => {
 
           {/* Font Selection */}
           <div className="space-y-3">
-            <div className="flex justify-between items-center">
-              <h3 className="text-sm font-medium leading-none text-muted-foreground uppercase tracking-wider">选择字体</h3>
-              <FontUploader onFontLoaded={(f) => setCustomFonts(prev => [...prev, f])} />
-            </div>
+            <h3 className="text-sm font-medium leading-none text-muted-foreground uppercase tracking-wider">选择字体</h3>
             <div className="grid grid-cols-2 gap-2 max-h-[320px] overflow-y-auto pr-1 custom-scrollbar">
               {allFonts.map((font) => (
                 <button

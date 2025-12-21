@@ -1,24 +1,71 @@
 import { FontOption } from './types';
-import AaSiHaShouXieTi from './font/AaSiHaSiHaShouXieTi-2.ttf';
+import AaDongQiChangYueYangLouJi from './font/AaDongQiChangYueYangLouJi-2.ttf';
 import BeiBanChuanSuiXinTi from './font/BeiBanChuanSuiXinTi-2.ttf';
 import AaKuangPaiShouShu from './font/AaKuangPaiShouShu-2.ttf';
 import AaTianMeiXinDongNaiLaoTi from './font/AaTianMeiXinDongNaiLaoTi-2.ttf';
+import No396ShangShouQingFengTi from './font/No.396-ShangShouQingFengTi-2.ttf';
+import XiangJiaoXiLeShouShu from './font/XiangJiaoXiLeShouShu-2.ttf';
 import ZiHunXuanWuShouShu from './font/ZiHunXuanWuShouShu.ttf';
-import ZiHunXingShiTi from './font/ZiHunXingShiTi.ttf';
+import DingLieXiDaV2 from './font/dingliexidafont-20250329V2)-2.ttf';
 
 type LocalFontSource = FontOption & {
   familyName: string;
   src: string;
 };
 
+export const GOOGLE_FONT_OPTIONS: FontOption[] = [
+  {
+    id: 'gf-noto-sans-sc',
+    name: 'Noto Sans SC',
+    family: '"Noto Sans SC", sans-serif',
+    category: 'sans',
+  },
+  {
+    id: 'gf-noto-serif-sc',
+    name: 'Noto Serif SC',
+    family: '"Noto Serif SC", serif',
+    category: 'serif',
+  },
+  {
+    id: 'gf-ma-shan-zheng',
+    name: 'Ma Shan Zheng',
+    family: '"Ma Shan Zheng", cursive',
+    category: 'handwriting',
+  },
+  {
+    id: 'gf-zcool-xiaowei',
+    name: 'ZCOOL XiaoWei',
+    family: '"ZCOOL XiaoWei", serif',
+    category: 'serif',
+  },
+  {
+    id: 'gf-zcool-kuaile',
+    name: 'ZCOOL KuaiLe',
+    family: '"ZCOOL KuaiLe", cursive',
+    category: 'handwriting',
+  },
+  {
+    id: 'gf-long-cang',
+    name: 'Long Cang',
+    family: '"Long Cang", cursive',
+    category: 'handwriting',
+  },
+  {
+    id: 'gf-liu-jian-mao-cao',
+    name: 'Liu Jian Mao Cao',
+    family: '"Liu Jian Mao Cao", cursive',
+    category: 'handwriting',
+  },
+];
+
 export const LOCAL_FONT_SOURCES: LocalFontSource[] = [
   {
-    id: 'aa-siha-shouxie',
-    name: 'Aa SiHa ShouXie',
-    familyName: 'AaSiHaShouXieTi',
-    family: '"AaSiHaShouXieTi", cursive',
+    id: 'aa-dongqi-changyue',
+    name: 'Aa DongQi ChangYue',
+    familyName: 'AaDongQiChangYueYangLouJi',
+    family: '"AaDongQiChangYueYangLouJi", cursive',
     category: 'handwriting',
-    src: AaSiHaShouXieTi,
+    src: AaDongQiChangYueYangLouJi,
   },
   {
     id: 'beiban-sui-xin',
@@ -45,20 +92,36 @@ export const LOCAL_FONT_SOURCES: LocalFontSource[] = [
     src: AaTianMeiXinDongNaiLaoTi,
   },
   {
-    id: 'zihun-xuanwu',
-    name: 'ZiHun XuanWu',
-    familyName: 'ZiHunXuanWu',
-    family: '"ZiHunXuanWu", cursive',
+    id: 'no396-shangshou-qingfeng',
+    name: 'No.396 ShangShou QingFeng',
+    familyName: 'No396ShangShouQingFengTi',
+    family: '"No396ShangShouQingFengTi", cursive',
     category: 'handwriting',
-    src: ZiHunXuanWuShouShu,
+    src: No396ShangShouQingFengTi,
   },
   {
-    id: 'zihun-xingshi',
-    name: 'ZiHun XingShi',
-    familyName: 'ZiHunXingShi',
-    family: '"ZiHunXingShi", display',
+    id: 'xiangjiao-xile-shoushu',
+    name: 'XiangJiao XiLe ShouShu',
+    familyName: 'XiangJiaoXiLeShouShu',
+    family: '"XiangJiaoXiLeShouShu", cursive',
+    category: 'handwriting',
+    src: XiangJiaoXiLeShouShu,
+  },
+  {
+    id: 'dingliexida-v2',
+    name: 'DingLieXiDa V2',
+    familyName: 'DingLieXiDaV2',
+    family: '"DingLieXiDaV2", display',
     category: 'display',
-    src: ZiHunXingShiTi,
+    src: DingLieXiDaV2,
+  },
+  {
+    id: 'zihun-xuanwu',
+    name: 'ZiHun XuanWu',
+    familyName: 'ZiHunXuanWuShouShu',
+    family: '"ZiHunXuanWuShouShu", cursive',
+    category: 'handwriting',
+    src: ZiHunXuanWuShouShu,
   },
 ];
 
@@ -69,7 +132,7 @@ export const PRESET_FONTS: FontOption[] = LOCAL_FONT_SOURCES.map(
     family,
     category,
   })
-);
+).concat(GOOGLE_FONT_OPTIONS);
 
 export const COLORS = [
   '#FFFFFF', // White
