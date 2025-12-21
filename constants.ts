@@ -3,8 +3,8 @@ import AaSiHaShouXieTi from './font/AaSiHaSiHaShouXieTi-2.ttf';
 import BeiBanChuanSuiXinTi from './font/BeiBanChuanSuiXinTi-2.ttf';
 import AaKuangPaiShouShu from './font/AaKuangPaiShouShu-2.ttf';
 import AaTianMeiXinDongNaiLaoTi from './font/AaTianMeiXinDongNaiLaoTi-2.ttf';
-import ZiHunXuanWuShouShu from './font/字魂玄武手书(商用需授权).ttf';
-import ZiHunXingShiTi from './font/字魂醒狮体(商用需授权).ttf';
+import ZiHunXuanWuShouShu from './font/ZiHunXuanWuShouShu.ttf';
+import ZiHunXingShiTi from './font/ZiHunXingShiTi.ttf';
 
 type LocalFontSource = FontOption & {
   familyName: string;
@@ -47,16 +47,16 @@ export const LOCAL_FONT_SOURCES: LocalFontSource[] = [
   {
     id: 'zihun-xuanwu',
     name: 'ZiHun XuanWu',
-    familyName: 'ZiHunXuanWuShouShu',
-    family: '"ZiHunXuanWuShouShu", cursive',
+    familyName: 'ZiHunXuanWu',
+    family: '"ZiHunXuanWu", cursive',
     category: 'handwriting',
     src: ZiHunXuanWuShouShu,
   },
   {
     id: 'zihun-xingshi',
     name: 'ZiHun XingShi',
-    familyName: 'ZiHunXingShiTi',
-    family: '"ZiHunXingShiTi", display',
+    familyName: 'ZiHunXingShi',
+    family: '"ZiHunXingShi", display',
     category: 'display',
     src: ZiHunXingShiTi,
   },
